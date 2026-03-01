@@ -1,0 +1,57 @@
+.inicio-page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Title wrapper to ensure it stays centered while animating */
+.inicio-page__title-wrapper {
+    position: absolute;
+    top: 180px;
+    left: 300px;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inicio-page__title {
+    font-family: var(--font-primary);
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1;
+    margin: 0;
+    text-align: center;
+}
+
+.inicio-page__title h1 {
+    display: block;
+    color: #E92100;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+/* Play button - invisible container over the image's PLAY button */
+.inicio-page__play-btn {
+    position: absolute;
+    bottom: 205px;
+    left: 25%;
+    transform: translateX(-15%);
+    z-index: 5;
+
+    /* Invisible - no background, no border, no text */
+    background: none;
+    border: none;
+    color: transparent;
+
+    /* Size to cover the PLAY button area in the image */
+    width: 220px;
+    height: 110px;
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}

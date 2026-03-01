@@ -1,0 +1,292 @@
+/* ===================================
+   Aprende con Manzanas - Global Styles
+   Mobile-first educational game
+   =================================== */
+
+/* CSS Reset */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    /* Colors - Sky & Nature */
+    --sky-light: #B8E8F0;
+    --sky-main: #87CEEB;
+    --sky-deep: #5BB5D5;
+    --grass-light: #D4E89C;
+    --grass-main: #8BC34A;
+    --grass-dark: #6B9B3A;
+    --earth-light: #C8A86E;
+    --earth-main: #A0845C;
+
+    /* Colors - UI */
+    --wood-light: #D4A056;
+    --wood-main: #B8860B;
+    --wood-dark: #8B6914;
+    --red-bright: #E92100;
+    --red-main: #D32F2F;
+    --blue-bright: #42A5F5;
+    --blue-main: #1E88E5;
+    --green-bright: #66BB6A;
+    --green-main: #43A047;
+    --yellow-bright: #FFEE58;
+    --yellow-main: #FDD835;
+    --orange-bright: #FFA726;
+    --orange-main: #FB8C00;
+    --pink-bright: #EC407A;
+    --purple-bright: #AB47BC;
+
+    /* Colors - Feedback */
+    --success: #4CAF50;
+    --error: #F44336;
+    --warning: #FF9800;
+    --star-gold: #FFD700;
+
+    /* Colors - Neutral */
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray-100: #F5F5F5;
+    --gray-200: #EEEEEE;
+    --gray-300: #E0E0E0;
+    --gray-600: #757575;
+    --gray-800: #424242;
+
+    /* Typography */
+    --font-primary: 'Fredoka', sans-serif;
+    --font-display: 'Baloo 2', cursive;
+
+    /* Font Sizes */
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-2xl: 2rem;
+    --fs-3xl: 2.5rem;
+    --fs-4xl: 3rem;
+    --fs-5xl: 4rem;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Border Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+
+    /* Z-index layers */
+    --z-background: 0;
+    --z-content: 10;
+    --z-overlay: 20;
+    --z-modal: 30;
+    --z-tooltip: 40;
+}
+
+/* Body - Desktop shows black bg with centered game */
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+body {
+    background: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Root container - Mobile frame */
+#root {
+    width: 100%;
+    max-width: 430px;
+    height: 100dvh;
+    position: relative;
+    overflow: hidden;
+    background: var(--sky-light);
+}
+
+/* Utility Classes */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Text styles */
+.text-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.text-shadow {
+    text-shadow: var(--shadow-text);
+}
+
+/* Prevent text selection in game */
+.no-select {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Scrollbar hide for game containers */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Animation keyframes */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Common animation classes */
+.anim-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.anim-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.anim-bounce {
+    animation: bounce 1s ease-in-out;
+}
+
+.anim-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.anim-slide-up {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.anim-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+}
