@@ -1,0 +1,36 @@
+.audio-player {
+    position: absolute;
+    top: var(--space-xl);
+    left: var(--space-xl);
+    z-index: 50;
+}
+
+.audio-btn {
+    background: rgba(255, 255, 255);
+    backdrop-filter: blur(4px);
+    border: 2px solid var(--wood-light);
+    border-radius: var(--radius-full);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.audio-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.audio-btn:active {
+    transform: scale(0.95);
+}
+
+.audio-btn--muted {
+    opacity: 0.6;
+    background: rgba(200, 200, 200, 0.5);
+}

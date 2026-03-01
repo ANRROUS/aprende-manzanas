@@ -12,3 +12,43 @@
     position: relative;
     overflow: hidden;
 }
+
+/* Start overlay to unlock audio */
+.start-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.start-overlay__text {
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    animation: tap-pulse 1.5s infinite ease-in-out;
+    text-align: center;
+    padding: var(--space-lg);
+}
+
+@keyframes tap-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}

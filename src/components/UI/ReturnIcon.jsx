@@ -10,8 +10,9 @@ function ReturnIcon() {
         <motion.button
             className="nav-icon-btn"
             onClick={() => navigate('/modulos')}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0.5, rotate: 20 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             aria-label="Volver a los módulos"
         >
