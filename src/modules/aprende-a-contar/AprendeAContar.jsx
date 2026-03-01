@@ -54,7 +54,7 @@ function AprendeAContar() {
             audioRef.current.src = AUDIO_MAP[num];
             audioRef.current.volume = 0.2;
             audioRef.current.play().catch(e => console.log("Audio play blocked", e));
-        }, 1000);
+        }, 900);
     };
 
     const handleScreenClick = () => {
