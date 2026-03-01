@@ -14,7 +14,7 @@ function AudioPlayer({ showSplash }) {
     useEffect(() => {
         // Configuramos el volumen bajo (0.1 de 1.0)
         if (audioRef.current) {
-            audioRef.current.volume = 0.1;
+            audioRef.current.volume = 0.15;
         }
 
         // Ya no intentamos autoplay aquí globalmente, sino que esperamos al click del start-overlay
@@ -38,28 +38,30 @@ function AudioPlayer({ showSplash }) {
     };
 
     return (
-        <div className="audio-player">
-            <audio
-                ref={audioRef}
-                src={soundtrack}
-                loop
-            />
+        <>
+            <div className="audio-player">
+                <audio
+                    ref={audioRef}
+                    src={soundtrack}
+                    loop
+                />
 
-            {/* Botón opcional para silenciar/activar música (pequeño arriba a la izquierda) */}
-            <AnimatePresence mode="wait">
-                <motion.button
-                    key={location.pathname}
-                    initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                    exit={{ opacity: 0, scale: 0.5, rotate: 20 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className={`audio-btn ${muted ? 'audio-btn--muted' : ''}`}
-                    onClick={toggleMute}
-                    aria-label={muted ? "Activar música" : "Silenciar música"}
-                >
-                    {muted ? '🔇' : '🔊'}
-                </motion.button>
-            </AnimatePresence>
+                {/* Botón opcional para silenciar/activar música (pequeño arriba a la izquierda) */}
+                <AnimatePresence mode="wait">
+                    <motion.button
+                        key={location.pathname}
+                        initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        exit={{ opacity: 0, scale: 0.5, rotate: 20 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                        className={`audio-btn ${muted ? 'audio-btn--muted' : ''}`}
+                        onClick={toggleMute}
+                        aria-label={muted ? "Activar música" : "Silenciar música"}
+                    >
+                        {muted ? '🔇' : '🔊'}
+                    </motion.button>
+                </AnimatePresence>
+            </div>
 
             {!showSplash && !started && (
                 <div
@@ -71,7 +73,7 @@ function AudioPlayer({ showSplash }) {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 }
 
