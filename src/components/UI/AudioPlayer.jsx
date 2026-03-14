@@ -14,7 +14,7 @@ function AudioPlayer({ showSplash }) {
     useEffect(() => {
         // Configuramos el volumen bajo (0.1 de 1.0)
         if (audioRef.current) {
-            audioRef.current.volume = 0.1;
+            audioRef.current.volume = 0.05;
         }
 
         // Ya no intentamos autoplay aquí globalmente, sino que esperamos al click del start-overlay

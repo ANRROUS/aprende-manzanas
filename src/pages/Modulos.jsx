@@ -82,6 +82,19 @@ function Modulos() {
                         );
                     })}
                 </div>
+
+                {/* Botón de Historial */}
+                <motion.button
+                    className="history-btn"
+                    initial={{ scale: 0, rotate: -45 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ type: 'spring', delay: 0.5 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => navigate('/historial')}
+                    title="Ver Historial"
+                >
+                    📋
+                </motion.button>
             </div>
         </PageTransition>
     );

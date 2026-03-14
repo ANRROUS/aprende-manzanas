@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Background from '../UI/Background';
 import './Splash.css';
 
 function Splash({ onFinish }) {

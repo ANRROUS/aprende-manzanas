@@ -1,0 +1,99 @@
+.hs-page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hs-container {
+    position: relative;
+    z-index: 10;
+    padding: 110px 20px 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hs-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #000;
+    margin: 0 0 5px;
+    text-shadow: 2px 2px 0 white;
+}
+
+.hs-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #495057;
+    margin: 0 0 20px;
+    font-weight: 600;
+}
+
+.hs-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 30px;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(0,0,0,0.15) transparent;
+}
+.hs-list::-webkit-scrollbar {
+    width: 4px;
+}
+.hs-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.hs-list::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.12);
+    border-radius: 10px;
+}
+.hs-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.25);
+}
+
+.hs-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    border: 3px solid #000;
+    border-radius: 16px;
+    padding: 16px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #000;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.hs-item:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #000;
+}
+
+.hs-item--locked {
+    opacity: 0.4;
+    pointer-events: none;
+    background: #f1f3f5;
+}
+
+.hs-item-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 45px;
+    text-align: center;
+}
+
+.hs-item-title {
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.hs-item-arrow {
+    font-size: 2rem;
+    color: #adb5bd;
+    font-weight: 900;
+}

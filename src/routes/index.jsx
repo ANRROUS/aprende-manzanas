@@ -4,6 +4,8 @@ import Inicio from '../pages/Inicio';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Modulos from '../pages/Modulos';
+import HistorialSelec from '../pages/HistorialSelec';
+import HistorialDetalle from '../pages/HistorialDetalle';
 
 // Game modules
 import AprendeAContar from '../modules/aprende-a-contar/AprendeAContar';
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: 'modulos', element: <Modulos /> },
+      { path: 'historial', element: <HistorialSelec /> },
+      { path: 'historial/:juego', element: <HistorialDetalle /> },
 
       // Game routes
       { path: 'juego/aprende-a-contar', element: <AprendeAContar /> },
